@@ -9,14 +9,14 @@ services:
     links:
       - db
     volumes:
-      - "./:/var/www/html"
+      - "./ChatBoard:/var/www/html"
       - "./apache-php/apache.conf:/etc/httpd/conf/httpd.conf"
-    container_name: "apache-php"
+    container_name: "apache-php-chat"
   db:
     image: mysql:5.7
     environment:
       - MYSQL_ROOT_PASSWORD=root
-    container_name: "mysql5.7"
+    container_name: "mysql5.7-chat"
   phpmyadmin:
     image: phpmyadmin/phpmyadmin:latest
     links:
@@ -28,4 +28,4 @@ services:
       - PMA_HOST=db
       - PMA_USER=root
       - PMA_PASSWORD=root
-    container_name: "phpmyamin-la"
+    container_name: "phpmyamin-la-chat"
