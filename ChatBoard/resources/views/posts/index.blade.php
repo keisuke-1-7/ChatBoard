@@ -3,7 +3,10 @@
 @section('content')
 
     <div class="container mt-4">
-        <div class="card mt-4">
+        <div class="card col-lg-4 py-1 mt-4">
+                    名前
+        </div>
+        <div class="card">
             <div class="card-header">
                     タイトル
             </div>

@@ -8,9 +8,9 @@
     <title>ChatBoard</title>
 </head>
 <body>
-    <header class="navbar nabbar-dark bg-danger">
+    <header class="navbar nabbar-dark bg-secondary">
         <div class="container">
-            <a class="navbar-brand" href="{{ url('') }}">
+            <a class="navbar-brand text-light">
                 CharBoard
             </a>
         </div>
