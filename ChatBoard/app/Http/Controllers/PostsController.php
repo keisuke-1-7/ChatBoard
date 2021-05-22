@@ -52,9 +52,10 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($post_id)
     {
-        //
+        $post = Post::findOrFail($post_id);
+        return view('posts.show', ['post'=>$post_id]);
     }
 
     /**
