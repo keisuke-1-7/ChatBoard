@@ -65,9 +65,11 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($post_id)
     {
-        //
+        $post = Post::findOrFail($post_id);
+        // dd($post_id);
+        return view('posts.edit', ['post' => $post]);
     }
 
     /**
@@ -77,9 +79,16 @@ class PostsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update($post_id, Request $request)
     {
-        //
+        $params = $request->validate([
+            'title' => 'required|max:20',
+            'body' => 'required|max:140',
+        ]);
+        $post = Post::findOrFail($post_id);
+        $post->fill($params)->save();
+
+        return redirect()->route('top');
     }
 
     /**
