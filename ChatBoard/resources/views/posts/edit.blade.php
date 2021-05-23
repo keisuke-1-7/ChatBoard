@@ -22,8 +22,7 @@
                         <label for="body">
                             本文
                         </label>
-                        <textarea name="body" id="body" rows="4" class="form-control" value="{{ $post->body }}">
-                        </textarea>
+                        <textarea name="body" id="body" rows="4" class="form-control">{{ $post->body }}</textarea>
                     </div>
                     <div class="mt-5">
                         <a class="btn btn-secondary" href="{{route('posts.show', ['post' => $post]) }}">
